@@ -1,0 +1,12 @@
+dehaze=imread('44.jpg');
+dehaze=im2uint8(dehaze);
+gary(:,:,1)=255-dehaze(:,:,1);
+gary(:,:,2)=255-dehaze(:,:,2);
+gary(:,:,3)=255-dehaze(:,:,3);
+I=dark(gary);
+figure,imshow(I);
+I=im2uint8(I);
+dehaze(:,:,1)=255-I(:,:,1);
+dehaze(:,:,2)=255-I(:,:,2);
+dehaze(:,:,3)=255-I(:,:,3);
+figure,imshow(dehaze);%提高亮度了
